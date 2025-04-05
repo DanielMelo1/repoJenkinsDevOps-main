@@ -31,7 +31,7 @@ pipeline {
     }
 stage('Build and Push Docker Image') {
     environment {
-        DOCKER_IMAGE = "danielmelo/ultimate-cicd:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "danielmelo5627/ultimate-cicd:3:${BUILD_NUMBER}"
     }
     steps {
         script {
@@ -52,8 +52,8 @@ stage('Build and Push Docker Image') {
 }
 stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "seu-repositorio-git"
-            GIT_USER_NAME = "seu-usuario-git"
+            GIT_REPO_NAME = "repoJenkinsDevOps-main"
+            GIT_USER_NAME = "DanielMelo1"
         }
         steps {
             withCredentials([string(credentialsId: 'git', variable: 'GITHUB_TOKEN')]) {
